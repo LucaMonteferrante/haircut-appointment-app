@@ -15,11 +15,11 @@ to start the app run:
 
 docker compose up --build -d
 
-at 
+at:
 
 http://127.0.0.1:5000/
 
 
 
-to stop the app do
+to stop the app do:
 docker compose down
