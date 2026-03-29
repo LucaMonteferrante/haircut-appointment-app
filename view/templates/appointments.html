@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="/appointments/new">Create Appointment</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Client</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Barber</th>
+        <th>Service</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    {% for a in appointments %}
+    <tr>
+        <td>{{ a.id }}</td>
+        <td>{{ a.client_name }}</td>
+        <td>{{ a.appointment_date }}</td>
+        <td>{{ a.appointment_time }}</td>
+        <td>{{ a.barber_name }}</td>
+        <td>{{ a.service_type }}</td>
+        <td>{{ a.status }}</td>
+        <td>
+            <a href="/appointments/{{ a.id }}/edit">Edit</a>
+            <form action="/appointments/{{ a.id }}/delete" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

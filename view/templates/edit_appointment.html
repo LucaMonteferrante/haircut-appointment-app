@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+    <input name="client_name" value="{{ appointment.client_name }}" required>
+    <input name="phone_number" value="{{ appointment.phone_number }}" required>
+    <input type="date" name="appointment_date" value="{{ appointment.appointment_date }}" required>
+    <input type="time" name="appointment_time" value="{{ appointment.appointment_time[:5] }}" required>
+    <input name="barber_name" value="{{ appointment.barber_name }}" required>
+    <input name="service_type" value="{{ appointment.service_type }}" required>
+    <input name="status" value="{{ appointment.status }}" required>
+    <textarea name="notes">{{ appointment.notes }}</textarea>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

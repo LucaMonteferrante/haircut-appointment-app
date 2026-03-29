@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+    <input name="client_name" placeholder="Client Name" required>
+    <input name="phone_number" placeholder="Phone Number" required>
+    <input type="date" name="appointment_date" required>
+    <input type="time" name="appointment_time" required>
+    <input name="barber_name" placeholder="Barber Name" required>
+    <input name="service_type" placeholder="Service Type" required>
+    <input name="status" value="Scheduled" required>
+    <textarea name="notes" placeholder="Notes"></textarea>
+    <button type="submit">Create</button>
+</form>
+{% endblock %}
